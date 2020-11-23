@@ -1,0 +1,63 @@
+@import url("https://fonts.googleapis.com/css2?family=Karla:wght@300;400&display=swap");
+
+html {
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  font-family: "Karla", sans-serif;
+  box-sizing: border-box;
+  overflow-y: scroll;
+}
+body {
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: hsla(0, 0%, 0%, 0.8);
+  background-color: aliceblue;
+  font-weight: normal;
+  word-wrap: break-word;
+  font-kerning: normal;
+  -moz-font-feature-settings: "kern", "liga", "clig", "calt";
+  -ms-font-feature-settings: "kern", "liga", "clig", "calt";
+  -webkit-font-feature-settings: "kern", "liga", "clig", "calt";
+  font-feature-settings: "kern", "liga", "clig", "calt";
+}
+
+.main-wrapper {
+  margin: 0 auto;
+  max-width: 94%;
+  padding: 0 1.0875rem 1.45rem;
+  display: flex;
+  flex-direction: row;
+}
+
+.column {
+  height: 100%;
+  flex: 3;
+}
+.side-column {
+  height: 100%;
+  flex: 1;
+}
+
+.side-menu-wrapper {
+  position: relative;
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: row;
+}
+
+.right-column {
+  position: absolute;
+  right: 5%;
+}
+
+.side-menu {
+  background-color: aliceblue;
+  border-radius: 5px;
+  position: absolute;
+  flex: 1;
+}
+
+.side-menu > ul {
+  padding: 0
+}

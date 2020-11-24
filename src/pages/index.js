@@ -1,12 +1,17 @@
 import React from "react"
 
+import Image from "../components/image"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 
 const IndexPage = () => (
   <Layout>
     <SEO title="Home" />
-    <p>
+    <div style={{ flex: 1, width: "90%", marginBottom: 20 }}>
+      <Image />
+    </div>
+      <h2>Fuli Tapijten</h2>
+    <div>
       Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur orci
       nisl, sollicitudin vitae pellentesque sed, mollis laoreet justo. Maecenas
       ut blandit elit. Nullam eget leo sit amet urna eleifend laoreet. Sed elit
@@ -16,7 +21,6 @@ const IndexPage = () => (
       fringilla. Donec accumsan auctor feugiat. Ut consequat ipsum ipsum, et
       sollicitudin elit consectetur quis. Mauris sit amet placerat est. Cras
       suscipit malesuada eros, id laoreet augue hendrerit vel. Praesent porta
-
       metus a nisl auctor blandit. Sed gravida eget leo id scelerisque. Maecenas
       pretium sapien eu rutrum pretium. Fusce nulla nisi, interdum at luctus eu,
       tristique vitae eros. Vestibulum elementum venenatis odio, quis ultricies
@@ -175,7 +179,7 @@ const IndexPage = () => (
       dictum tincidunt, tortor velit elementum risus, ac molestie sapien ligula
       non dolor. Sed sit amet est id est venenatis volutpat. Duis eleifend mi
       eget enim pulvinar auctor. Integer vestibulum nec urna sed tristique.
-    </p>
+    </div>
   </Layout>
 )
 

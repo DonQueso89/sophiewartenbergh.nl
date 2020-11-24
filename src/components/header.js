@@ -7,8 +7,42 @@ const Metadata = () => {
   return <div className="right-column">Some metadata</div>
 }
 
-const SocialAndTranslation = () => {
-  return <div style={{ flex: 1}}> Kreim</div>
+const Social = () => {
+  return (
+    <div style={{display: "flex", flexDirection: "column", textAlign: "right"}}>
+      <a
+        className="regular-link"
+        href="https://www.linkedin.com/in/sophie-wartenbergh/"
+        target="_blank"
+        rel="noreferrer"
+      >
+        linkedin
+      </a>{" "}
+      <a
+        className="regular-link"
+        href="https://www.instagram.com/sophie_wartenbergh/?hl=nl"
+        target="_blank"
+        rel="noreferrer"
+      >
+        instagram
+      </a>{" "}
+    </div>
+  )
+}
+
+const LanguageSelector = () => {
+  return (
+    <div
+      style={{
+        display: "flex",
+        flexDirection: "row",
+        justifyContent: "flex-end",
+      }}
+    >
+      <p style={{marginRight: "25%"}}>nl</p>
+      <p>eng</p>
+    </div>
+  )
 }
 
 const Header = ({ siteTitle }) => (
@@ -40,20 +74,27 @@ const Header = ({ siteTitle }) => (
             style={{
               color: `black`,
               textDecoration: `none`,
-              flex: 1
+              flex: 1,
             }}
           >
-            Sophie<br/>Wartenbergh
+            Sophie
+            <br />
+            Wartenbergh
           </Link>
         </h1>
-        <div style={{flex: 3}}/>
-        <SocialAndTranslation/>
+        <div style={{ flex: 3 }} />
+        <div style={{ flex: 1 }}>
+          <LanguageSelector/>
+          <Social />
+        </div>
       </div>
       <hr />
-      <div className="side-menu-wrapper">
+      <div className="column-wrapper">
         <NavMenu />
       </div>
+      <div className="column-wrapper">
       <Metadata />
+      </div>
     </div>
   </header>
 )

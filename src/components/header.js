@@ -4,12 +4,19 @@ import React from "react"
 import NavMenu from "./NavMenu"
 
 const Metadata = () => {
-  return <div className="right-column">Some metadata</div>
+  return <div className="right-column">
+    <div className="metadata-item">
+      <p style={{fontWeight: "bold"}}>The Frippel</p>
+    </div>
+
+  </div>
 }
 
 const Social = () => {
   return (
-    <div style={{display: "flex", flexDirection: "column", textAlign: "right"}}>
+    <div
+      style={{ display: "flex", flexDirection: "column", textAlign: "right" }}
+    >
       <a
         className="regular-link"
         href="https://www.linkedin.com/in/sophie-wartenbergh/"
@@ -39,7 +46,7 @@ const LanguageSelector = () => {
         justifyContent: "flex-end",
       }}
     >
-      <p style={{marginRight: "25%"}}>nl</p>
+      <p style={{ marginRight: "25%" }}>nl</p>
       <p>eng</p>
     </div>
   )
@@ -68,7 +75,7 @@ const Header = ({ siteTitle }) => (
           justifyContent: "space-between",
         }}
       >
-        <h1 style={{marginBottom:1 }}>
+        <h1 style={{ marginBottom: 1 }}>
           <Link
             to="/"
             style={{
@@ -84,17 +91,13 @@ const Header = ({ siteTitle }) => (
         </h1>
         <div style={{ flex: 3 }} />
         <div style={{ flex: 1 }}>
-          <LanguageSelector/>
+          <LanguageSelector />
           <Social />
         </div>
       </div>
       <hr />
-      <div className="column-wrapper">
-        <NavMenu />
-      </div>
-      <div className="column-wrapper">
+      <NavMenu />
       <Metadata />
-      </div>
     </div>
   </header>
 )

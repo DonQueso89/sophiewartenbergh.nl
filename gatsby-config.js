@@ -1,3 +1,6 @@
+require("dotenv").config()
+
+
 module.exports = {
   siteMetadata: {
     title: `Sophie Wartenbergh`,
@@ -31,7 +34,7 @@ module.exports = {
     {
       resolve: `gatsby-source-datocms`,
       options: {
-        apiToken: process.env["DATO_CMS_API_KEY"],
+        apiToken: process.env.DATO_CMS_API_TOKEN,
         preview: false,
         disableLiveReload: false,
       },

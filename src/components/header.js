@@ -46,8 +46,8 @@ const LanguageSelector = () => {
         justifyContent: "flex-end",
       }}
     >
-      <p style={{ marginRight: "25%" }}>nl</p>
-      <p>eng</p>
+      <a href="" style={{ marginRight: "25%" }}>nl</a>
+      <a href="">eng</a>
     </div>
   )
 }
@@ -75,7 +75,7 @@ const Header = ({ siteTitle }) => (
           justifyContent: "space-between",
         }}
       >
-        <h1 style={{ marginBottom: 1 }}>
+        <h1 style={{ marginBottom: 1, lineHeight: 1.12, width: "19%" }}>
           <Link
             to="/"
             style={{
@@ -85,7 +85,6 @@ const Header = ({ siteTitle }) => (
             }}
           >
             Sophie
-            <br />
             Wartenbergh
           </Link>
         </h1>
@@ -95,7 +94,6 @@ const Header = ({ siteTitle }) => (
           <Social />
         </div>
       </div>
-      <hr />
       <NavMenu />
       <Metadata />
     </div>

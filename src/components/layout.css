@@ -6,10 +6,12 @@ html {
   font-family: "Lato", sans-serif;
   box-sizing: border-box;
   overflow-y: scroll;
+  letter-spacing: 0.019em;
 }
 
 h1, h2, h3, h4, h5, h6 {
   font-family: "Prata", serif;
+  letter-spacing: 0.030em;
 }
 
 body {
@@ -83,7 +85,7 @@ body {
 
 .side-menu > ul > li {
   display: inline;
-  padding-right: 14px;
+  padding-right: 16px;
 }
 
 .regular-link {

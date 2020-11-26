@@ -31,7 +31,7 @@ body {
 
 .main-wrapper {
   margin: 0 auto;
-  max-width: 94%;
+  width: 94%;
   padding: 0 1.0875rem 1.45rem;
   display: flex;
   flex-direction: row;
@@ -56,8 +56,8 @@ body {
 .right-column {
   position: absolute;
   right: 3%;  /* (100 - main-wrapper-max-width) / 2 */
-  bottom: -15px; /*secondary font-size + 1*/
   width: 18.8%; /* main-wrapper max-width * 1/5 */
+  top: 100%; /* Immediately below the header aligned with the slider top */
 }
 
 .side-menu {
@@ -105,6 +105,11 @@ a:hover {
   font-weight: bolder;
 }
 
+.metadata-item {
+  padding-left: 20%;
+}
+
 .metadata-item > p {
+  margin-top: 0;
   margin-bottom: 0;
 }

@@ -3,13 +3,17 @@ import PropTypes from "prop-types"
 import React from "react"
 import NavMenu from "./NavMenu"
 
-const Metadata = () => {
-  return <div className="right-column">
-    <div className="metadata-item">
-      <p style={{fontWeight: "bold"}}>The Frippel</p>
+const Metadata = ({ info }) => {
+  return (
+    <div className="right-column">
+      {info && (
+        <div
+          className="metadata-item"
+          dangerouslySetInnerHTML={{ __html: info.childMarkdownRemark.html.replace(/\n/g, "<br />") }}
+        ></div>
+      )}
     </div>
-
-  </div>
+  )
 }
 
 const Social = () => {
@@ -46,13 +50,15 @@ const LanguageSelector = () => {
         justifyContent: "flex-end",
       }}
     >
-      <a href="" style={{ marginRight: "25%" }}>nl</a>
+      <a href="" style={{ marginRight: "25%" }}>
+        nl
+      </a>
       <a href="">eng</a>
     </div>
   )
 }
 
-const Header = ({ siteTitle }) => (
+const Header = ({ siteTitle, location, info }) => (
   <header
     style={{
       marginBottom: `0.1rem`,
@@ -64,8 +70,9 @@ const Header = ({ siteTitle }) => (
     <div
       style={{
         margin: `0 auto`,
-        maxWidth: "94%",
+        width: "94%",
         padding: `1.45rem 1.0875rem`,
+        position: 'relative'
       }}
     >
       <div
@@ -84,8 +91,7 @@ const Header = ({ siteTitle }) => (
               flex: 1,
             }}
           >
-            Sophie
-            Wartenbergh
+            Sophie Wartenbergh
           </Link>
         </h1>
         <div style={{ flex: 3 }} />
@@ -94,8 +100,8 @@ const Header = ({ siteTitle }) => (
           <Social />
         </div>
       </div>
-      <NavMenu />
-      <Metadata />
+      <NavMenu location={location} />
+      <Metadata info={info} />
     </div>
   </header>
 )

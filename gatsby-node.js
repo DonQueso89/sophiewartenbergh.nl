@@ -1,7 +1,24 @@
-/**
- * Implement Gatsby's Node APIs in this file.
- *
- * See: https://www.gatsbyjs.com/docs/node-apis/
- */
+const path = require("path")
 
-// You can delete this file if you're not using it
+exports.createPages = async ({ actions, graphql}) => {
+    const { createPage } = actions
+    const { data } = await graphql(`
+        query concept {
+            allDatoCmsConcept {
+                edges {
+                  node {
+                    slug
+                  }
+                }
+              }
+        }
+    `)
+
+    data.allDatoCmsConcept.edges.map(({ node }) => {
+        createPage({
+            path: `/work/concept/${node.slug}`,
+            component: path.resolve("./src/templates/detail.js"),
+            context: { slug: node.slug }
+        })
+    })
+}

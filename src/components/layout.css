@@ -113,3 +113,60 @@ a:hover {
   margin-top: 0;
   margin-bottom: 0;
 }
+
+.carousel {
+  width: 100%;
+  position: relative;
+}
+
+.slider-btn {
+  color: #f7fbf6;
+  position: absolute;
+  top: 50%;
+  border-radius: 4px;
+  font-size: 30px;
+  padding: 10px;
+  transition: background-color 0.6s ease;
+  transform: translateY(-50%);
+}
+
+.slider-thumbnails {
+  width: 60%;
+  position: absolute;
+  bottom: 1%;
+  left: 50%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  transform: translateX(-50%);
+}
+
+.thumbnail {
+  width: 30%;
+  height: auto;
+  border-radius: 4px;
+  opacity: 0.4;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.active-thumbnail {
+  opacity: 0.9;
+}
+
+ .thumbnail:hover {
+  opacity: 0.9;
+}
+
+.prev-btn {
+  left: 0;
+  padding-left: 0px;
+}
+
+.next-btn {
+  right: 0;
+  padding-right: 0px;
+}
+
+.prev-btn:hover, .next-btn:hover {
+  background-color: rgba(0,0,0,0.7);
+}

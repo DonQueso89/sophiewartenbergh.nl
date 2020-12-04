@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react"
 import { Link } from "gatsby"
+import useSlugs from "../hooks/useSlugs"
 
 const SubMenu = ({ title, className, children, location, slug }) => {
   const [isOpen, setOpen] = useState(false)
@@ -11,8 +12,7 @@ const SubMenu = ({ title, className, children, location, slug }) => {
 
   return (
     <li>
-      <a className={isActive ? "active-link" : ""} onClick={() => setOpen(o => !o)}>
-        {title}
+      <a className={isActive || isOpen ? "active-link" : ""} onClick={() => setOpen(o => !o)} dangerouslySetInnerHTML={{__html: title}}>
       </a>
       {isOpen && (
         <ul type="none" className={className}>
@@ -26,22 +26,22 @@ const SubMenu = ({ title, className, children, location, slug }) => {
 }
 
 const NavMenu = ({ location }) => {
+  const [conceptSlugs, productSlugs, eventSlugs] = useSlugs();
+  const conceptLinks = conceptSlugs.map((e,i) => <Link activeClassName="active-link" partiallyActive={true} to={`/work/concept/${e.slug}`} key={i}>{e.title}</Link>)
+  const productLinks = productSlugs.map((e,i) => <Link activeClassName="active-link" partiallyActive={true} to={`/work/product/${e.slug}`} key={i}>{e.title}</Link>)
+  const eventLinks = eventSlugs.map((e,i) => <Link activeClassName="active-link" partiallyActive={true} to={`/work/event/${e.slug}`} key={i}>{e.title}</Link>)
   return (
     <nav className="side-menu">
       <ul type="none">
         <SubMenu title={"Work"} className={"outer-menu"} location={location} slug={"work"}>
-          <SubMenu title={"Events"} className={"sub-menu"} location={location} slug={"events"}>
-            <a href="#">Schnibbelaar</a>
-            <a href="#">NippelTribbie</a>
+          <SubMenu title={"Events&nbsp;&nbsp;&nbsp;&nbsp;"} className={"sub-menu"} location={location} slug={"events"}>
+            {eventLinks}
           </SubMenu>
           <SubMenu title={"Concept"} className={"sub-menu"} location={location} slug={"concept"}>
-            <Link activeClassName="active-link" partiallyActive={true} to="/work/concept/fuli-carpets">Fuli carpets</Link>
-            <Link activeClassName="active-link" partiallyActive={true} to="">Graumie?</Link>
+            {conceptLinks}
           </SubMenu>
           <SubMenu title={"Product"} className={"sub-menu"} location={location} slug={"product"}>
-            <a href="#">Gribben</a>
-            <a href="#">Schlaam</a>
-            <a href="#">Krebbels</a>
+            {productLinks}
           </SubMenu>
         </SubMenu>
         <li>

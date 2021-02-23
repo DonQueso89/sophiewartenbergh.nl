@@ -58,7 +58,7 @@ const LanguageSelector = () => {
   )
 }
 
-const Header = ({ siteTitle, location, info }) => (
+const Header = ({ siteTitle, location, info, pageTitle }) => (
   <header
     style={{
       marginBottom: `0.1rem`,
@@ -91,10 +91,12 @@ const Header = ({ siteTitle, location, info }) => (
               flex: 1,
             }}
           >
-            Sophie Wartenbergh
+            Sophie<br/> Wartenbergh
           </Link>
         </h1>
-        <div style={{ flex: 3 }} />
+        <div className="header-middle">
+            <h1>{pageTitle || ""}</h1>
+        </div>
         <div style={{ flex: 1 }}>
           <LanguageSelector />
           <Social />
@@ -102,6 +104,7 @@ const Header = ({ siteTitle, location, info }) => (
       </div>
       <NavMenu location={location} />
       <Metadata info={info} />
+      {pageTitle && <hr className="header-lines" align="center"/>}
     </div>
   </header>
 )

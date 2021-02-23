@@ -5,7 +5,7 @@ import { useStaticQuery, graphql } from "gatsby"
 import Header from "./header"
 import "./layout.css"
 
-const Layout = ({ children, location, info }) => {
+const Layout = ({ children, location, info, pageTitle }) => {
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
       site {
@@ -18,7 +18,7 @@ const Layout = ({ children, location, info }) => {
 
   return (
     <>
-      <Header siteTitle={data.site.siteMetadata?.title || `Title`} location={location} info={info} />
+      <Header siteTitle={data.site.siteMetadata?.title || `Title`} location={location} info={info} pageTitle={pageTitle} />
       <div className="main-wrapper">
         <div className="side-column">
         </div>
@@ -26,11 +26,7 @@ const Layout = ({ children, location, info }) => {
         <div className="side-column">
         </div>
       </div>
-      <footer
-        style={{
-          margin: `2rem`,
-        }}
-      >
+      <footer>
         © {new Date().getFullYear()}, Built by{" "}
         <a href="https://github.com/DonQueso89" target="_blank">
           DonQueso89

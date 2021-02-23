@@ -17,7 +17,7 @@ const SubMenu = ({ title, className, children, location, slug }) => {
       {isOpen && (
         <ul type="none" className={className}>
           {children.map(child => (
-            <li>{child}</li>
+            <li className="nav-entry">{child}</li>
           ))}
         </ul>
       )}
@@ -34,7 +34,7 @@ const NavMenu = ({ location }) => {
     <nav className="side-menu">
       <ul type="none">
         <SubMenu title={"Work"} className={"outer-menu"} location={location} slug={"work"}>
-          <SubMenu title={"Events&nbsp;&nbsp;&nbsp;&nbsp;"} className={"sub-menu"} location={location} slug={"events"}>
+          <SubMenu title={"Events"} className={"sub-menu"} location={location} slug={"event"}>
             {eventLinks}
           </SubMenu>
           <SubMenu title={"Concept"} className={"sub-menu"} location={location} slug={"concept"}>

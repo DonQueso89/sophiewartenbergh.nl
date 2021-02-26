@@ -241,6 +241,10 @@ header * {
   opacity: 1;
 }
 
+.news-item-container {
+  position: relative;
+}
+
 .news-item {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
@@ -260,6 +264,13 @@ header * {
 .news-item-title {
   grid-column: 1 / 4;
   grid-row: 1;
+  transition: background-color 1s ease-in;
+  cursor: pointer;
+}
+
+.news-item-title:hover {
+  transform: rotate(-1deg) translateY(-10px);
+  color: rgb(124, 113, 93);
 }
 
 .news-item-location {
@@ -284,6 +295,20 @@ header * {
 
 .news-item-body > p:first-child {
   margin-top: 0px;
+}
+
+.news-item-modal {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  margin-left: auto;
+  width: 100%;
+  height: 100%;
+  background-color: #f7fbf6;
+  opacity: 95%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .bio-container {

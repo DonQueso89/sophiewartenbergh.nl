@@ -3,12 +3,10 @@ import React from "react"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import ImageCarousel from "../components/ImageCarousel"
-import Concept from "../components/concept"
-import Product from "../components/product"
-import Event from "../components/event"
 
 const Detail = ({ data, location }) => {
-  const { title, slider, bodyNode, infoNode } = data.datoCmsConcept || data.datoCmsProduct || data.datoCmsEvent
+  const { title, slider, bodyNode, infoNode } =
+    data.datoCmsConcept || data.datoCmsProduct || data.datoCmsEvent
   return (
     <Layout info={infoNode} location={location}>
       <SEO title={title} />
@@ -26,7 +24,12 @@ const Detail = ({ data, location }) => {
 export default Detail
 
 export const query = graphql`
-  query($slug: String!, $isConcept: Boolean!, $isProduct: Boolean!, $isEvent: Boolean!) {
+  query(
+    $slug: String!
+    $isConcept: Boolean!
+    $isProduct: Boolean!
+    $isEvent: Boolean!
+  ) {
     datoCmsConcept(slug: { eq: $slug }) @include(if: $isConcept) {
       ...DatoCmsConcept
     }

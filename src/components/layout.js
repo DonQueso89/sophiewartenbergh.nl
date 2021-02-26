@@ -28,7 +28,7 @@ const Layout = ({ children, location, info, pageTitle }) => {
       </div>
       <footer>
         © {new Date().getFullYear()}, Built by{" "}
-        <a href="https://github.com/DonQueso89" target="_blank">
+        <a href="https://github.com/DonQueso89" target="_blank" rel="noreferrer">
           DonQueso89
         </a>
         {` `}

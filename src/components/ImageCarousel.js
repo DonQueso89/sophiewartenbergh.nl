@@ -6,12 +6,14 @@ const ImageCarousel = ({ fluidImages }) => {
   const [curIdx, setIdx] = useState(0)
   const payload = fluidImages.map((img, idx) => (
     <Img
+      key={idx}
       style={{ display: idx === curIdx ? "block" : "none" }}
       fluid={img.fluid}
     />
   ))
   const thumbnails = fluidImages.map((img, idx) => (
     <div
+      key={idx}
       onClick={() => setIdx(idx)}
       className={"thumbnail" + (idx === curIdx ? " active-thumbnail" : "")}
     >

@@ -7,7 +7,7 @@ const NewsItemModal = ({ newsItem, resetSelection }) => {
   return (
     <div className="news-item-modal" onClick={resetSelection}>
       <SEO title={newsItem.title} />
-      <div style={{ width: "90%", marginBottom: 20 }}>
+      <div style={{ width: "90%", marginBottom: 21 }}>
         <ImageCarousel fluidImages={[newsItem.image]} />
       </div>
       <div>

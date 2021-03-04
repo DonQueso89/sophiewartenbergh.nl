@@ -95,7 +95,6 @@ const Header = ({ siteTitle, location, info, pageTitle }) => (
           </Link>
         </h1>
         <div className="header-middle">
-            <h1>{pageTitle || ""}</h1>
         </div>
         <div style={{ flex: 1 }}>
           <LanguageSelector />
@@ -104,7 +103,6 @@ const Header = ({ siteTitle, location, info, pageTitle }) => (
       </div>
       <NavMenu location={location} />
       <Metadata info={info} />
-      {pageTitle && <hr className="header-lines" align="center"/>}
     </div>
   </header>
 )

@@ -8,6 +8,10 @@ const Bio = ({ data }) => (
     <SEO title="Bio" />
     <div
       className="bio-container"
+    ></div>
+    <h1 className="page-title">Bio</h1>
+    <div
+      className="bio-content"
       dangerouslySetInnerHTML={{
         __html: data.allDatoCmsBio.edges[0].node.bodyNode.childMarkdownRemark.html,
       }}

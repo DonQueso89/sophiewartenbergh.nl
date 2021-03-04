@@ -6,7 +6,6 @@ import SEO from "../components/seo"
 import NewsItem from "../components/NewsItem"
 import NewsItemModal from "../components/NewsItemModal"
 
-const NewsItemSeparator = () => <hr className="news-item-separator"></hr>
 
 const News = ({ data }) => {
   const [selectedItem, setSelectedItem] = useState(null)
@@ -22,18 +21,11 @@ const News = ({ data }) => {
     .map(({ node }, i) => (
       <NewsItem newsItem={node} key={i} handleClick={handleClick} />
     ))
-    .reduce(
-      (acc, elem) => [
-        ...acc,
-        elem,
-        <NewsItemSeparator key={elem.key + 1000} />,
-      ],
-      []
-    )
   return (
     <Layout pageTitle={"News"}>
       <SEO title="News" />
       <div className="news-item-container">
+        <h1 className="page-title">News</h1>
         {items}
         {selectedItem && (
           <NewsItemModal

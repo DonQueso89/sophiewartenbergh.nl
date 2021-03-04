@@ -1,25 +1,26 @@
 import React from "react"
-import ImageCarousel from "../components/ImageCarousel"
 import SEO from "../components/seo"
+import Img from "gatsby-image"
 
 
 const NewsItemModal = ({ newsItem, resetSelection }) => {
   return (
     <div className="news-item-modal" onClick={resetSelection}>
       <SEO title={newsItem.title} />
-      <div style={{ width: "90%", marginBottom: 20 }}>
-        <ImageCarousel fluidImages={[newsItem.image]} />
+      <div className="news-item-modal-inner-container">
+        <h1>{newsItem.title}</h1>
+        <i style={{marginBottom: "10px"}}>{newsItem.location}, {newsItem.date}</i>
+        <div className="news-item-modal-content-container">
+          <div className="news-item-modal-img-container">
+              <Img fixed={newsItem.image.fixed}/>
+          </div>
+          <div className="news-item-modal-content"
+            dangerouslySetInnerHTML={{
+              __html: newsItem.bodyNode.childMarkdownRemark.html,
+            }}
+          ></div>
+        </div>
       </div>
-      <div>
-      <h2>{newsItem.title}</h2>
-            <strong style={{float: "left"}}>{newsItem.location}</strong>
-            <strong style={{float:"right"}}>{newsItem.date}</strong>
-      </div>
-      <div
-        dangerouslySetInnerHTML={{
-          __html: newsItem.bodyNode.childMarkdownRemark.html,
-        }}
-      ></div>
     </div>
   )
 }

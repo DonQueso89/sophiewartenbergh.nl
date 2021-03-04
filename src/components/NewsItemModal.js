@@ -5,7 +5,7 @@ import Img from "gatsby-image"
 
 const NewsItemModal = ({ newsItem, resetSelection }) => {
   return (
-    <div className="news-item-modal" onClick={resetSelection}>
+    <div className="news-item-modal" style={{opacity: "95%"}} onClick={resetSelection}>
       <SEO title={newsItem.title} />
       <div className="news-item-modal-inner-container">
         <h1>{newsItem.title}</h1>

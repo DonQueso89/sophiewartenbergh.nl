@@ -7,7 +7,7 @@ const ImageCarousel = ({ fluidImages }) => {
   const payload = fluidImages.map((img, idx) => (
     <Img
       key={idx}
-      style={{ display: idx === curIdx ? "block" : "none" }}
+      style={{ display: idx === curIdx ? "block" : "none", maxHeight: "70vh", maxWidth: "100%", height: "100%", width: "auto", objectFit: "contain" }}
       fluid={img.fluid}
     />
   ))

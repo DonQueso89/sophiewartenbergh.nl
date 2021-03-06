@@ -10,7 +10,7 @@ const Detail = ({ data, location }) => {
   return (
     <Layout info={infoNode} location={location}>
       <SEO title={title} />
-      <div style={{ flex: 1, width: "90%", marginBottom: 20 }}>
+      <div style={{ flex: 1, width: "100%", marginBottom: 20 }}>
         <ImageCarousel fluidImages={slider} />
       </div>
       <h2>{title}</h2>

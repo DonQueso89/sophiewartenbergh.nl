@@ -29,7 +29,6 @@ const useSlugs = () => {
       }
     }
   `)
-  console.log(data)
   return [
     data.allDatoCmsConcept.edges.map(({ node }) => node),
     data.allDatoCmsProduct.edges.map(({ node }) => node),

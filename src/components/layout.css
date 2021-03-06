@@ -146,6 +146,22 @@ a:hover {
   max-height: 70vh;
 }
 
+.frontpage-img-container {
+  max-height: 70vh;
+  width: 100%;
+}
+
+.frontpage-img {
+  max-height: 70vh;
+  width: 100%;
+}
+
+
+.frontpage-title:hover {
+  font-weight: bold;
+  cursor: pointer;
+}
+
 .slider-btn {
   color: #f7fbf6;
   position: absolute;

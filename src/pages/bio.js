@@ -9,7 +9,7 @@ const Bio = ({ data }) => (
     <div
       className="bio-container"
     ></div>
-    <h1 className="page-title">Bio</h1>
+    <h1 className="page-title">Vision</h1>
     <div
       className="bio-content"
       dangerouslySetInnerHTML={{

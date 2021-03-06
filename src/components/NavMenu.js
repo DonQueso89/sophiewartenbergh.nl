@@ -48,10 +48,10 @@ const NavMenu = ({ location }) => {
           <Link activeClassName="active-link" to="/news" >News</Link>
         </li>
         <li>
-          <Link activeClassName="active-link" to="/bio" >Bio</Link>
+          <Link activeClassName="active-link" to="/bio" >Vision</Link>
         </li>
         <li>
-          <Link activeClassName="active-link" to="/contact" >Contact</Link>
+          <Link activeClassName="active-link" to="/contact" >About</Link>
         </li>
       </ul>
     </nav>

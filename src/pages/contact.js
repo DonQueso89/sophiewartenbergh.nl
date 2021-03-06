@@ -9,7 +9,7 @@ const Contact = ({ data }) => (
     <div
       className="contact-container"
     ></div>
-    <h1 className="page-title">Contact</h1>
+    <h1 className="page-title">About</h1>
     <div
       className="contact-content"
       dangerouslySetInnerHTML={{

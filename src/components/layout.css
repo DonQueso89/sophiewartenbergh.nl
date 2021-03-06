@@ -272,7 +272,7 @@ header * {
 
 .news-item-title:hover {
   transform: rotate(-1deg) translateY(-10px);
-  color: rgb(124, 113, 93);
+  font-weight: bold;
 }
 
 .news-item-location-date {
@@ -347,4 +347,12 @@ header * {
 
 .news-item-modal-content > p {
   margin-top: 0px;
+}
+
+.contact-content {
+  width: 100%;
+}
+
+.bio-content {
+  width: 100%;
 }

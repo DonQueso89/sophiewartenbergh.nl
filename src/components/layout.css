@@ -365,8 +365,26 @@ header * {
   margin-top: 0px;
 }
 
-.contact-content {
+.contact-container {
+  display: flex;
   width: 100%;
+  flex-direction: row;
+}
+
+.contact-container > * {
+  margin: 0px 10px 0px 10px;
+}
+
+.contact-img {
+  flex: 1;
+  object-fit: contain;
+}
+.contact-content {
+  flex: 2;
+}
+
+.contact-content > p:first-child {
+  margin-top: 0px;
 }
 
 .bio-content {

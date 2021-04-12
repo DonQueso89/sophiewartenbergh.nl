@@ -1,9 +1,20 @@
-import React, { useState } from "react"
+import React, { useState, useRef } from "react"
 
 import Img from "gatsby-image"
 
+
 const ImageCarousel = ({ fluidImages }) => {
   const [curIdx, setIdx] = useState(0)
+  const refs = useRef([]);
+  const parentRef = useRef(null);
+  const parent = parentRef && parentRef.current && parentRef.current.getBoundingClientRect() || null
+  const parentX = parent && parent.left + parent.width / 2
+  
+  const selected = refs.current.length && refs.current[curIdx] && refs.current[curIdx].getBoundingClientRect() || null
+  const selectedX = selected && selected.left + selected.width / 2
+  const delta = parentX - selectedX;
+  console.log(delta)
+
   const payload = fluidImages.map((img, idx) => (
     <Img
       key={idx}
@@ -16,11 +27,14 @@ const ImageCarousel = ({ fluidImages }) => {
       key={idx}
       onClick={() => setIdx(idx)}
       className={"thumbnail" + (idx === curIdx ? " active-thumbnail" : "")}
+      ref={el => refs.current[idx] = el}
+      style={{transform: `translateX(${delta}px)`}}
     >
       <Img fluid={img.fluid} fadeIn={true} />
     </div>
   ))
   const maxIdx = payload.length
+  
 
   const setPrev = () => {
     setIdx(idx => {
@@ -33,7 +47,7 @@ const ImageCarousel = ({ fluidImages }) => {
   }
 
   return (
-    <div className="carousel">
+    <div className="carousel" ref={parentRef}>
       {payload}
       <a className="next-btn slider-btn" onClick={setNext}>
         &#10095;

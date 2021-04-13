@@ -15,7 +15,7 @@ const NewsItemModal = ({ newsItem, resetSelection }) => {
     >
       <SEO title={newsItem.title} />
       <div className="news-item-modal-inner-container">
-        <NewsItem newsItem={newsItem} titleRef={titleRef}/>
+        <NewsItem newsItem={newsItem} titleRef={titleRef} fullView={true}/>
       </div>
     </div>
   )

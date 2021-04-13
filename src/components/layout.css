@@ -398,13 +398,13 @@ header * {
 .contact-img {
   flex: 1;
   object-fit: contain;
+  margin-top: 16px;
 }
 .contact-content {
   flex: 2;
 }
-
 .contact-content > p:first-child {
-  margin-top: 0px;
+  margin-top: 14px;
 }
 
 .bio-content {

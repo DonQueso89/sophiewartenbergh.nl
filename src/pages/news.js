@@ -50,6 +50,7 @@ export const query = graphql`
               html
             }
           }
+          abstract
           image {
             fixed(height: 200, width: 200) {
               ...GatsbyDatoCmsFixed

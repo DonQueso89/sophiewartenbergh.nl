@@ -4,7 +4,7 @@ import Img from "gatsby-image"
 
 
 const ImageCarousel = ({ fluidImages }) => {
-  const [curIdx, setIdx] = useState(0)
+  const [curIdx, setIdx] = useState(null)
   const [curDelta, setDelta] = useState(0);
   const refs = useRef([]);
   const parentRef = useRef(null);
@@ -18,6 +18,10 @@ const ImageCarousel = ({ fluidImages }) => {
   useEffect(() => {
     setDelta(d => d+delta);
   }, [curIdx]);
+  
+  useEffect(() => {
+    setIdx(0);
+  }, []);
 
   const payload = fluidImages.map((img, idx) => (
     <Img

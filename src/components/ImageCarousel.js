@@ -1,10 +1,11 @@
-import React, { useState, useRef } from "react"
+import React, { useState, useRef, useEffect } from "react"
 
 import Img from "gatsby-image"
 
 
 const ImageCarousel = ({ fluidImages }) => {
   const [curIdx, setIdx] = useState(0)
+  const [curDelta, setDelta] = useState(0);
   const refs = useRef([]);
   const parentRef = useRef(null);
   const parent = parentRef && parentRef.current && parentRef.current.getBoundingClientRect() || null
@@ -13,7 +14,10 @@ const ImageCarousel = ({ fluidImages }) => {
   const selected = refs.current.length && refs.current[curIdx] && refs.current[curIdx].getBoundingClientRect() || null
   const selectedX = selected && selected.left + selected.width / 2
   const delta = parentX - selectedX;
-  console.log(delta)
+
+  useEffect(() => {
+    setDelta(d => d+delta);
+  }, [curIdx]);
 
   const payload = fluidImages.map((img, idx) => (
     <Img
@@ -28,7 +32,7 @@ const ImageCarousel = ({ fluidImages }) => {
       onClick={() => setIdx(idx)}
       className={"thumbnail" + (idx === curIdx ? " active-thumbnail" : "")}
       ref={el => refs.current[idx] = el}
-      style={{transform: `translateX(${delta}px)`}}
+      style={{transform: `translateX(${curDelta}px)`}}
     >
       <Img fluid={img.fluid} fadeIn={true} />
     </div>
